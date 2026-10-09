@@ -1,0 +1,88 @@
+{
+  "buffer_bytes" : 8589934592,
+  "date_utc" : "2026-10-09T11:03:11Z",
+  "device" : "Apple M5 Max",
+  "hasUnifiedMemory" : true,
+  "initialization" : "Each uint32 input word contains its own index; all group sums verified analytically modulo 2^32.",
+  "interpretation" : "Effective logical large-buffer GPU read throughput; not a hardware DRAM counter or Strata throughput.",
+  "max_GB_per_s" : 582.3770838465615,
+  "maxBufferLength" : 41747087360,
+  "median_GB_per_s" : 579.50713045728594,
+  "min_GB_per_s" : 577.17812355492174,
+  "os" : "Version 27.0.1 (Build 26A434)",
+  "passes_per_trial" : 8,
+  "physical_memory_bytes" : 68719476736,
+  "recommendedMaxWorkingSetSize" : 60817408000,
+  "storage_mode" : "shared",
+  "thermal_state_after" : 0,
+  "thermal_state_before" : 0,
+  "thread_execution_width" : 32,
+  "threadgroup_size" : 256,
+  "timer" : "MTLCommandBuffer.gpuEndTime - gpuStartTime; command with 8 dispatches and buffer barriers",
+  "trials" : [
+    {
+      "checksum_pass" : true,
+      "GB_per_s" : 580.76744006106469,
+      "gpu_seconds" : 0.11832529166713357,
+      "logical_read_bytes" : 68719476736,
+      "logical_write_bytes" : 4194304,
+      "thermal_state" : 0,
+      "trial" : 1
+    },
+    {
+      "checksum_pass" : true,
+      "GB_per_s" : 582.3770838465615,
+      "gpu_seconds" : 0.11799825000343844,
+      "logical_read_bytes" : 68719476736,
+      "logical_write_bytes" : 4194304,
+      "thermal_state" : 0,
+      "trial" : 2
+    },
+    {
+      "checksum_pass" : true,
+      "GB_per_s" : 579.10789776755075,
+      "gpu_seconds" : 0.11866437498247251,
+      "logical_read_bytes" : 68719476736,
+      "logical_write_bytes" : 4194304,
+      "thermal_state" : 0,
+      "trial" : 3
+    },
+    {
+      "checksum_pass" : true,
+      "GB_per_s" : 579.45724710867114,
+      "gpu_seconds" : 0.11859283334342763,
+      "logical_read_bytes" : 68719476736,
+      "logical_write_bytes" : 4194304,
+      "thermal_state" : 0,
+      "trial" : 4
+    },
+    {
+      "checksum_pass" : true,
+      "GB_per_s" : 581.02114242544747,
+      "gpu_seconds" : 0.11827362503390759,
+      "logical_read_bytes" : 68719476736,
+      "logical_write_bytes" : 4194304,
+      "thermal_state" : 0,
+      "trial" : 5
+    },
+    {
+      "checksum_pass" : true,
+      "GB_per_s" : 579.50713045728594,
+      "gpu_seconds" : 0.11858262500027195,
+      "logical_read_bytes" : 68719476736,
+      "logical_write_bytes" : 4194304,
+      "thermal_state" : 0,
+      "trial" : 6
+    },
+    {
+      "checksum_pass" : true,
+      "GB_per_s" : 577.17812355492174,
+      "gpu_seconds" : 0.11906112503493205,
+      "logical_read_bytes" : 68719476736,
+      "logical_write_bytes" : 4194304,
+      "thermal_state" : 0,
+      "trial" : 7
+    }
+  ],
+  "warmup_gpu_seconds" : 0.1194785000407137
+}

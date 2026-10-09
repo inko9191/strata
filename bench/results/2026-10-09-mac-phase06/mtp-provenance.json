@@ -1,0 +1,17 @@
+{
+  "repository": "unsloth/Qwen3.8-Flash-Next-GGUF",
+  "revision": "766911a6b7369840a91dbcd95f9f997acaab6cd6",
+  "file": {
+    "rfilename": "MTP/mtp-Qwen3.8-Flash-Next-Q8_0.gguf",
+    "blobId": "fc5aae45dc1ef7e3e74561e1af4e263ddaa1b533",
+    "size": 4137429120,
+    "lfs": {
+      "sha256": "58a47d6a216307e9b97172d5bfdc3436a8994b632f5e436b9bb6edf8951da8d1",
+      "size": 4137429120,
+      "pointerSize": 135
+    }
+  },
+  "computed_sha256": "58a47d6a216307e9b97172d5bfdc3436a8994b632f5e436b9bb6edf8951da8d1",
+  "actual_bytes": 4137429120,
+  "verified": true
+}

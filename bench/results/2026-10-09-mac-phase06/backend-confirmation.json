@@ -1,0 +1,24 @@
+{
+  "scope": "Extra verbose diagnostic only; excluded from throughput medians",
+  "offload_reports": [
+    "0.01.484.046 I load_tensors: offloaded 49/49 layers to GPU",
+    "0.01.892.222 I load_tensors: offloaded 50/50 layers to GPU"
+  ],
+  "buffer_reports": [
+    "0.01.484.049 I load_tensors:   CPU_Mapped model buffer size =   322.07 MiB",
+    "0.01.484.049 I load_tensors:  MTL0_Mapped model buffer size = 37398.27 MiB",
+    "0.01.484.050 I load_tensors:   CPU_Mapped model buffer size = 27465.95 MiB",
+    "0.01.892.224 I load_tensors:   CPU_Mapped model buffer size =   644.14 MiB",
+    "0.01.892.225 I load_tensors:  MTL0_Mapped model buffer size =  3935.32 MiB"
+  ],
+  "startup_memory": [
+    "0.01.497.116 I llama_kv_cache:       MTL0 KV buffer size =   459.00 MiB",
+    "0.01.534.887 I llama_memory_recurrent:       MTL0 RS buffer size =   450.28 MiB",
+    "0.01.537.446 I llama_kv_cache:       MTL0 KV buffer size =   114.75 MiB",
+    "0.01.577.857 I sched_reserve:       MTL0 compute buffer size =   989.51 MiB",
+    "0.01.894.610 I llama_kv_cache:       MTL0 KV buffer size =    72.00 MiB",
+    "0.01.897.025 I llama_kv_cache:       MTL0 KV buffer size =    18.00 MiB",
+    "0.01.913.637 I sched_reserve:       MTL0 compute buffer size =   734.49 MiB",
+    "0.01.932.009 I sched_reserve:       MTL0 compute buffer size =   734.49 MiB"
+  ]
+}

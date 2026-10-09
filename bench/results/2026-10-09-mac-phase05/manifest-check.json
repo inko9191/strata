@@ -1,0 +1,2362 @@
+{
+  "manifest": "tests/data/native_experts/iq2_xs.txt",
+  "manifest_sha256": "712e343a258ea90ff0e754006e85d2fd6cca1be6471e7c050cce0be2a08e60c6",
+  "layers": 48,
+  "experts_per_layer": 512,
+  "expert_bytes": 35454976000,
+  "passed": true,
+  "checks": [
+    {
+      "layer": 0,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.0.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 946114560,
+          "bytes": 268697600,
+          "absolute_offset": 957139232
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.0.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 1218142720,
+          "bytes": 268697600,
+          "absolute_offset": 1229167392
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.0.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 709263360,
+          "bytes": 235929600,
+          "absolute_offset": 720288032
+        }
+      }
+    },
+    {
+      "layer": 1,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.1.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 16,
+          "dtype": "IQ2_XXS",
+          "relative_offset": 1780718976,
+          "bytes": 216268800,
+          "absolute_offset": 1791743648
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.1.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 16,
+          "dtype": "IQ2_XXS",
+          "relative_offset": 2000958336,
+          "bytes": 216268800,
+          "absolute_offset": 2011983008
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.1.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 1543867776,
+          "bytes": 235929600,
+          "absolute_offset": 1554892448
+        }
+      }
+    },
+    {
+      "layer": 2,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.2.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 2578444032,
+          "bytes": 268697600,
+          "absolute_offset": 2589468704
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.2.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 2850638592,
+          "bytes": 268697600,
+          "absolute_offset": 2861663264
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.2.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 2341592832,
+          "bytes": 235929600,
+          "absolute_offset": 2352617504
+        }
+      }
+    },
+    {
+      "layer": 3,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.3.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 3418592896,
+          "bytes": 268697600,
+          "absolute_offset": 3429617568
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.3.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 3690787456,
+          "bytes": 268697600,
+          "absolute_offset": 3701812128
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.3.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 3180922496,
+          "bytes": 235929600,
+          "absolute_offset": 3191947168
+        }
+      }
+    },
+    {
+      "layer": 4,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.4.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 16,
+          "dtype": "IQ2_XXS",
+          "relative_offset": 4247629440,
+          "bytes": 216268800,
+          "absolute_offset": 4258654112
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.4.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 16,
+          "dtype": "IQ2_XXS",
+          "relative_offset": 4467395200,
+          "bytes": 216268800,
+          "absolute_offset": 4478419872
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.4.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 4010778240,
+          "bytes": 235929600,
+          "absolute_offset": 4021802912
+        }
+      }
+    },
+    {
+      "layer": 5,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.5.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 4977376256,
+          "bytes": 268697600,
+          "absolute_offset": 4988400928
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.5.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 5249570816,
+          "bytes": 268697600,
+          "absolute_offset": 5260595488
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.5.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 4740525056,
+          "bytes": 235929600,
+          "absolute_offset": 4751549728
+        }
+      }
+    },
+    {
+      "layer": 6,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.6.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 5813757312,
+          "bytes": 268697600,
+          "absolute_offset": 5824781984
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.6.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 6085951872,
+          "bytes": 268697600,
+          "absolute_offset": 6096976544
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.6.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 5577366912,
+          "bytes": 235929600,
+          "absolute_offset": 5588391584
+        }
+      }
+    },
+    {
+      "layer": 7,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.7.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 6654602496,
+          "bytes": 268697600,
+          "absolute_offset": 6665627168
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.7.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 6927270656,
+          "bytes": 268697600,
+          "absolute_offset": 6938295328
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.7.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 6418212096,
+          "bytes": 235929600,
+          "absolute_offset": 6429236768
+        }
+      }
+    },
+    {
+      "layer": 8,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.8.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 29,
+          "dtype": "IQ1_M",
+          "relative_offset": 7485710080,
+          "bytes": 183500800,
+          "absolute_offset": 7496734752
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.8.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 29,
+          "dtype": "IQ1_M",
+          "relative_offset": 7672707840,
+          "bytes": 183500800,
+          "absolute_offset": 7683732512
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.8.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 7248858880,
+          "bytes": 235929600,
+          "absolute_offset": 7259883552
+        }
+      }
+    },
+    {
+      "layer": 9,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.9.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 16,
+          "dtype": "IQ2_XXS",
+          "relative_offset": 8150906496,
+          "bytes": 216268800,
+          "absolute_offset": 8161931168
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.9.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 16,
+          "dtype": "IQ2_XXS",
+          "relative_offset": 8370505856,
+          "bytes": 216268800,
+          "absolute_offset": 8381530528
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.9.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 7913236096,
+          "bytes": 235929600,
+          "absolute_offset": 7924260768
+        }
+      }
+    },
+    {
+      "layer": 10,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.10.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 16,
+          "dtype": "IQ2_XXS",
+          "relative_offset": 8882084352,
+          "bytes": 216268800,
+          "absolute_offset": 8893109024
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.10.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 16,
+          "dtype": "IQ2_XXS",
+          "relative_offset": 9101850112,
+          "bytes": 216268800,
+          "absolute_offset": 9112874784
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.10.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 8645233152,
+          "bytes": 235929600,
+          "absolute_offset": 8656257824
+        }
+      }
+    },
+    {
+      "layer": 11,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.11.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 16,
+          "dtype": "IQ2_XXS",
+          "relative_offset": 9617147776,
+          "bytes": 216268800,
+          "absolute_offset": 9628172448
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.11.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 16,
+          "dtype": "IQ2_XXS",
+          "relative_offset": 9836913536,
+          "bytes": 216268800,
+          "absolute_offset": 9847938208
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.11.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 9380757376,
+          "bytes": 235929600,
+          "absolute_offset": 9391782048
+        }
+      }
+    },
+    {
+      "layer": 12,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.12.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 10343397760,
+          "bytes": 268697600,
+          "absolute_offset": 10354422432
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.12.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 10616065920,
+          "bytes": 268697600,
+          "absolute_offset": 10627090592
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.12.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 10106546560,
+          "bytes": 235929600,
+          "absolute_offset": 10117571232
+        }
+      }
+    },
+    {
+      "layer": 13,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.13.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 29,
+          "dtype": "IQ1_M",
+          "relative_offset": 11180892416,
+          "bytes": 183500800,
+          "absolute_offset": 11191917088
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.13.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 29,
+          "dtype": "IQ1_M",
+          "relative_offset": 11367723776,
+          "bytes": 183500800,
+          "absolute_offset": 11378748448
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.13.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 10943222016,
+          "bytes": 235929600,
+          "absolute_offset": 10954246688
+        }
+      }
+    },
+    {
+      "layer": 14,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.14.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 16,
+          "dtype": "IQ2_XXS",
+          "relative_offset": 11845756032,
+          "bytes": 216268800,
+          "absolute_offset": 11856780704
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.14.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 16,
+          "dtype": "IQ2_XXS",
+          "relative_offset": 12065521792,
+          "bytes": 216268800,
+          "absolute_offset": 12076546464
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.14.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 11608085632,
+          "bytes": 235929600,
+          "absolute_offset": 11619110304
+        }
+      }
+    },
+    {
+      "layer": 15,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.15.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 12585860096,
+          "bytes": 268697600,
+          "absolute_offset": 12596884768
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.15.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 12857888256,
+          "bytes": 268697600,
+          "absolute_offset": 12868912928
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.15.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 12349008896,
+          "bytes": 235929600,
+          "absolute_offset": 12360033568
+        }
+      }
+    },
+    {
+      "layer": 16,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.16.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 13417620480,
+          "bytes": 268697600,
+          "absolute_offset": 13428645152
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.16.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 13690288640,
+          "bytes": 268697600,
+          "absolute_offset": 13701313312
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.16.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 13179950080,
+          "bytes": 235929600,
+          "absolute_offset": 13190974752
+        }
+      }
+    },
+    {
+      "layer": 17,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.17.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 14253338496,
+          "bytes": 268697600,
+          "absolute_offset": 14264363168
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.17.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 14525533056,
+          "bytes": 268697600,
+          "absolute_offset": 14536557728
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.17.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 14016487296,
+          "bytes": 235929600,
+          "absolute_offset": 14027511968
+        }
+      }
+    },
+    {
+      "layer": 18,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.18.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 16,
+          "dtype": "IQ2_XXS",
+          "relative_offset": 15089706752,
+          "bytes": 216268800,
+          "absolute_offset": 15100731424
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.18.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 16,
+          "dtype": "IQ2_XXS",
+          "relative_offset": 15309306112,
+          "bytes": 216268800,
+          "absolute_offset": 15320330784
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.18.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 14852855552,
+          "bytes": 235929600,
+          "absolute_offset": 14863880224
+        }
+      }
+    },
+    {
+      "layer": 19,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.19.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 16,
+          "dtype": "IQ2_XXS",
+          "relative_offset": 15825064576,
+          "bytes": 216268800,
+          "absolute_offset": 15836089248
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.19.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 16,
+          "dtype": "IQ2_XXS",
+          "relative_offset": 16044830336,
+          "bytes": 216268800,
+          "absolute_offset": 16055855008
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.19.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 15588213376,
+          "bytes": 235929600,
+          "absolute_offset": 15599238048
+        }
+      }
+    },
+    {
+      "layer": 20,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.20.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 16551493760,
+          "bytes": 268697600,
+          "absolute_offset": 16562518432
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.20.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 16823688320,
+          "bytes": 268697600,
+          "absolute_offset": 16834712992
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.20.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 16313823360,
+          "bytes": 235929600,
+          "absolute_offset": 16324848032
+        }
+      }
+    },
+    {
+      "layer": 21,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.21.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 17387083776,
+          "bytes": 268697600,
+          "absolute_offset": 17398108448
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.21.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 17659278336,
+          "bytes": 268697600,
+          "absolute_offset": 17670303008
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.21.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 17149413376,
+          "bytes": 235929600,
+          "absolute_offset": 17160438048
+        }
+      }
+    },
+    {
+      "layer": 22,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.22.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 18219629952,
+          "bytes": 268697600,
+          "absolute_offset": 18230654624
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.22.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 18491824512,
+          "bytes": 268697600,
+          "absolute_offset": 18502849184
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.22.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 17983239552,
+          "bytes": 235929600,
+          "absolute_offset": 17994264224
+        }
+      }
+    },
+    {
+      "layer": 23,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.23.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 19060557056,
+          "bytes": 268697600,
+          "absolute_offset": 19071581728
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.23.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 19332585216,
+          "bytes": 268697600,
+          "absolute_offset": 19343609888
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.23.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 18823705856,
+          "bytes": 235929600,
+          "absolute_offset": 18834730528
+        }
+      }
+    },
+    {
+      "layer": 24,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.24.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 19895571200,
+          "bytes": 268697600,
+          "absolute_offset": 19906595872
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.24.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 20167765760,
+          "bytes": 268697600,
+          "absolute_offset": 20178790432
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.24.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 19658720000,
+          "bytes": 235929600,
+          "absolute_offset": 19669744672
+        }
+      }
+    },
+    {
+      "layer": 25,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.25.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 20734888576,
+          "bytes": 268697600,
+          "absolute_offset": 20745913248
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.25.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 21006916736,
+          "bytes": 268697600,
+          "absolute_offset": 21017941408
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.25.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 20498037376,
+          "bytes": 235929600,
+          "absolute_offset": 20509062048
+        }
+      }
+    },
+    {
+      "layer": 26,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.26.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 21569492992,
+          "bytes": 268697600,
+          "absolute_offset": 21580517664
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.26.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 21841687552,
+          "bytes": 268697600,
+          "absolute_offset": 21852712224
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.26.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 21332641792,
+          "bytes": 235929600,
+          "absolute_offset": 21343666464
+        }
+      }
+    },
+    {
+      "layer": 27,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.27.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 16,
+          "dtype": "IQ2_XXS",
+          "relative_offset": 22409874816,
+          "bytes": 216268800,
+          "absolute_offset": 22420899488
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.27.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 16,
+          "dtype": "IQ2_XXS",
+          "relative_offset": 22630114176,
+          "bytes": 216268800,
+          "absolute_offset": 22641138848
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.27.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 22173023616,
+          "bytes": 235929600,
+          "absolute_offset": 22184048288
+        }
+      }
+    },
+    {
+      "layer": 28,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.28.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 23135958400,
+          "bytes": 268697600,
+          "absolute_offset": 23146983072
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.28.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 23407986560,
+          "bytes": 268697600,
+          "absolute_offset": 23419011232
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.28.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 22899107200,
+          "bytes": 235929600,
+          "absolute_offset": 22910131872
+        }
+      }
+    },
+    {
+      "layer": 29,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.29.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 16,
+          "dtype": "IQ2_XXS",
+          "relative_offset": 23972633856,
+          "bytes": 216268800,
+          "absolute_offset": 23983658528
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.29.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 16,
+          "dtype": "IQ2_XXS",
+          "relative_offset": 24192399616,
+          "bytes": 216268800,
+          "absolute_offset": 24203424288
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.29.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 23735782656,
+          "bytes": 235929600,
+          "absolute_offset": 23746807328
+        }
+      }
+    },
+    {
+      "layer": 30,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.30.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 16,
+          "dtype": "IQ2_XXS",
+          "relative_offset": 24702086272,
+          "bytes": 216268800,
+          "absolute_offset": 24713110944
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.30.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 16,
+          "dtype": "IQ2_XXS",
+          "relative_offset": 24921852032,
+          "bytes": 216268800,
+          "absolute_offset": 24932876704
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.30.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 24465695872,
+          "bytes": 235929600,
+          "absolute_offset": 24476720544
+        }
+      }
+    },
+    {
+      "layer": 31,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.31.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 25438155776,
+          "bytes": 268697600,
+          "absolute_offset": 25449180448
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.31.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 25710350336,
+          "bytes": 268697600,
+          "absolute_offset": 25721375008
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.31.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 25201304576,
+          "bytes": 235929600,
+          "absolute_offset": 25212329248
+        }
+      }
+    },
+    {
+      "layer": 32,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.32.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 26268623360,
+          "bytes": 268697600,
+          "absolute_offset": 26279648032
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.32.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 26540817920,
+          "bytes": 268697600,
+          "absolute_offset": 26551842592
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.32.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 26031772160,
+          "bytes": 235929600,
+          "absolute_offset": 26042796832
+        }
+      }
+    },
+    {
+      "layer": 33,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.33.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 27103867776,
+          "bytes": 268697600,
+          "absolute_offset": 27114892448
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.33.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 27376062336,
+          "bytes": 268697600,
+          "absolute_offset": 27387087008
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.33.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 26867016576,
+          "bytes": 235929600,
+          "absolute_offset": 26878041248
+        }
+      }
+    },
+    {
+      "layer": 34,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.34.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 27944782592,
+          "bytes": 268697600,
+          "absolute_offset": 27955807264
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.34.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 28216977152,
+          "bytes": 268697600,
+          "absolute_offset": 28228001824
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.34.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 27707931392,
+          "bytes": 235929600,
+          "absolute_offset": 27718956064
+        }
+      }
+    },
+    {
+      "layer": 35,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.35.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 28782135936,
+          "bytes": 268697600,
+          "absolute_offset": 28793160608
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.35.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 29054330496,
+          "bytes": 268697600,
+          "absolute_offset": 29065355168
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.35.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 28545284736,
+          "bytes": 235929600,
+          "absolute_offset": 28556309408
+        }
+      }
+    },
+    {
+      "layer": 36,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.36.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 29612769920,
+          "bytes": 268697600,
+          "absolute_offset": 29623794592
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.36.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 29885438080,
+          "bytes": 268697600,
+          "absolute_offset": 29896462752
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.36.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 29375918720,
+          "bytes": 235929600,
+          "absolute_offset": 29386943392
+        }
+      }
+    },
+    {
+      "layer": 37,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.37.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 29,
+          "dtype": "IQ1_M",
+          "relative_offset": 30448487936,
+          "bytes": 183500800,
+          "absolute_offset": 30459512608
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.37.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 29,
+          "dtype": "IQ1_M",
+          "relative_offset": 30635485696,
+          "bytes": 183500800,
+          "absolute_offset": 30646510368
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.37.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 30211636736,
+          "bytes": 235929600,
+          "absolute_offset": 30222661408
+        }
+      }
+    },
+    {
+      "layer": 38,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.38.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 31114296192,
+          "bytes": 268697600,
+          "absolute_offset": 31125320864
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.38.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 31386490752,
+          "bytes": 268697600,
+          "absolute_offset": 31397515424
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.38.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 30877444992,
+          "bytes": 235929600,
+          "absolute_offset": 30888469664
+        }
+      }
+    },
+    {
+      "layer": 39,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.39.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 31955223296,
+          "bytes": 268697600,
+          "absolute_offset": 31966247968
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.39.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 32227417856,
+          "bytes": 268697600,
+          "absolute_offset": 32238442528
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.39.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 31718372096,
+          "bytes": 235929600,
+          "absolute_offset": 31729396768
+        }
+      }
+    },
+    {
+      "layer": 40,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.40.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 32783194880,
+          "bytes": 268697600,
+          "absolute_offset": 32794219552
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.40.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 33055389440,
+          "bytes": 268697600,
+          "absolute_offset": 33066414112
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.40.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 32546343680,
+          "bytes": 235929600,
+          "absolute_offset": 32557368352
+        }
+      }
+    },
+    {
+      "layer": 41,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.41.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 33617799296,
+          "bytes": 268697600,
+          "absolute_offset": 33628823968
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.41.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 33889993856,
+          "bytes": 268697600,
+          "absolute_offset": 33901018528
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.41.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 33380948096,
+          "bytes": 235929600,
+          "absolute_offset": 33391972768
+        }
+      }
+    },
+    {
+      "layer": 42,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.42.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 34453043712,
+          "bytes": 268697600,
+          "absolute_offset": 34464068384
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.42.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 34725711872,
+          "bytes": 268697600,
+          "absolute_offset": 34736736544
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.42.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 34216192512,
+          "bytes": 235929600,
+          "absolute_offset": 34227217184
+        }
+      }
+    },
+    {
+      "layer": 43,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.43.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 35294065536,
+          "bytes": 268697600,
+          "absolute_offset": 35305090208
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.43.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 35566093696,
+          "bytes": 268697600,
+          "absolute_offset": 35577118368
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.43.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 35057214336,
+          "bytes": 235929600,
+          "absolute_offset": 35068239008
+        }
+      }
+    },
+    {
+      "layer": 44,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.44.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 36124533120,
+          "bytes": 268697600,
+          "absolute_offset": 36135557792
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.44.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 36397201280,
+          "bytes": 268697600,
+          "absolute_offset": 36408225952
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.44.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 35887681920,
+          "bytes": 235929600,
+          "absolute_offset": 35898706592
+        }
+      }
+    },
+    {
+      "layer": 45,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.45.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 36965921536,
+          "bytes": 268697600,
+          "absolute_offset": 36976946208
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.45.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 37238116096,
+          "bytes": 268697600,
+          "absolute_offset": 37249140768
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.45.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 36729070336,
+          "bytes": 235929600,
+          "absolute_offset": 36740095008
+        }
+      }
+    },
+    {
+      "layer": 46,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.46.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 37802123392,
+          "bytes": 268697600,
+          "absolute_offset": 37813148064
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.46.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 38074317952,
+          "bytes": 268697600,
+          "absolute_offset": 38085342624
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.46.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 37565272192,
+          "bytes": 235929600,
+          "absolute_offset": 37576296864
+        }
+      }
+    },
+    {
+      "layer": 47,
+      "passed": true,
+      "errors": [],
+      "tensors": {
+        "gate": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.47.ffn_gate_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 38643429376,
+          "bytes": 268697600,
+          "absolute_offset": 38654454048
+        },
+        "up": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.47.ffn_up_exps.weight",
+          "dimensions": [
+            2560,
+            640,
+            512
+          ],
+          "type": 22,
+          "dtype": "IQ2_S",
+          "relative_offset": 38915623936,
+          "bytes": 268697600,
+          "absolute_offset": 38926648608
+        },
+        "down": {
+          "file": "Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+          "name": "blk.47.ffn_down_exps.weight",
+          "dimensions": [
+            640,
+            2560,
+            512
+          ],
+          "type": 42,
+          "dtype": "Q2_0",
+          "relative_offset": 38406578176,
+          "bytes": 235929600,
+          "absolute_offset": 38417602848
+        }
+      }
+    }
+  ]
+}

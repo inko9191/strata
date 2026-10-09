@@ -1,0 +1,74 @@
+{
+  "hardware_from_phase05": {
+    "os": "ProductName:\t\tmacOS\nProductVersion:\t\t27.0.1\nBuildVersion:\t\t26A434\n",
+    "physical_memory": "hw.memsize: 68719476736\n",
+    "wired_limit": "iogpu.wired_limit_mb: 58000\n",
+    "swap_before_clean_reference": "vm.swapusage: total = 5120.00M  used = 3573.69M  free = 1546.31M  (encrypted)\n",
+    "memory_before_clean_reference": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                  2435305.\nPages active:                                 490094.\nPages inactive:                               533393.\nPages speculative:                              4239.\nPages throttled:                                   0.\nPages wired down:                             317953.\nPages purgeable:                               18288.\n\"Translation faults\":                     2459818179.\nPages copy-on-write:                       239041730.\nPages zero filled:                        7643513045.\nPages reactivated:                          18199406.\nPages purged:                               10311764.\nFile-backed pages:                            367058.\nAnonymous pages:                              660668.\nPages stored in compressor:                   748586.\nPages occupied by compressor:                 362508.\nDecompressions:                             33371564.\nCompressions:                               54069947.\nPageins:                                   155124289.\nPageouts:                                       5610.\nSwapins:                                      454410.\nSwapouts:                                     789985.\nPages tagged:                                 247810.\nPages tagged resident:                        168881.\nPages tagged compressed:                       78929.\nPages tag-storage:                            131072.\nPages tag-storage holding tags:                 9793.\nPages tag-storage free:                        17608.\nPages tag-storage non-tag pageable:            96221.\nPages tag-storage non-tag wired:                   8.\nBytes of compressed tags:                   16714880.\nTagged compressions:                          919083.\nTagged decompressions:                        737933.\n",
+    "conditions": "Downloads and builds completed; no model process running during the final bandwidth probe. Clean inference uses one locked runner, fresh CLI processes, alternating CPU/Metal, three trials each, no warm-up. OS page cache and Metal shader caches were warmed by preliminary attempts; no purge or system setting change. Other user workloads are not controlled.",
+    "temperature_celsius": "unavailable; thermal state recorded separately",
+    "swap_after_clean_reference": "vm.swapusage: total = 5120.00M  used = 3573.69M  free = 1546.31M  (encrypted)\n",
+    "thermal_after_clean_reference": 0,
+    "thermal_state_note": "ProcessInfo.thermalState: 0=nominal; recorded after the model runs and before/after the separate final bandwidth probe. Per-CLI-trial temperatures were not sampled."
+  },
+  "protocol_source": "bench/results/2026-10-06-llamacpp-0.6.0/README.md",
+  "prompts": {
+    "4k": {
+      "file": "bench/results/2026-10-06-llamacpp-0.6.0/prompt-4k.txt",
+      "sha256": "ff37c750cd8d1fd7c1b48abaa4acb1abb561cdb421cd206014587bdc087185a1",
+      "bytes": 11286
+    },
+    "32k": {
+      "file": "bench/results/2026-10-06-llamacpp-0.6.0/prompt-32k.txt",
+      "sha256": "c0cb102a064131e165642492698b42981d88ec4433c2367484423adffc30b4e5",
+      "bytes": 108419
+    }
+  },
+  "rounds": 3,
+  "reps_per_round": {
+    "4k": 2,
+    "32k": 1
+  },
+  "sampler": {
+    "seed": 1,
+    "temperature": [
+      0,
+      0.7
+    ],
+    "top_k_at_temp_07": 20,
+    "top_p_at_temp_07": 0.95,
+    "cache_prompt": false,
+    "thinking": false,
+    "ignore_eos": true
+  },
+  "ttft_definition": "server prompt_ms, matching reference; not streaming client TTFT",
+  "rss_definition": "0.5s ps process-tree RSS samples per request plus time -l per-session maximum; mapped pages included",
+  "gpu_resource_peak": "unmeasured",
+  "temperature_sensor": "unavailable",
+  "other_user_workloads": "not controlled",
+  "os_cache": "not purged",
+  "nonce": "paired between MTP off/on, unique across cells/rounds/reps",
+  "deviations": [
+    "IQ2_XS rather than reference IQ3_XXS",
+    "Apple Metal, all model layers offloaded, explicit PLE CPU lazy mmap",
+    "ignore_eos to force 256 measured tokens, original requests used maximum 256",
+    "paired nonce instead of config-dependent nonce",
+    "0.5s Darwin RSS sampling; no NVIDIA whole-card counter",
+    "LLAMA_TRACE=1 for verification batch accounting"
+  ],
+  "before_sysctl_vm.swapusage": "vm.swapusage: total = 5120.00M  used = 3565.69M  free = 1554.31M  (encrypted)\n",
+  "before_sysctl_iogpu.wired_limit_mb": "iogpu.wired_limit_mb: 58000\n",
+  "before_vm_stat_vm_stat": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                   107852.\nPages active:                                 332975.\nPages inactive:                               360398.\nPages speculative:                             13819.\nPages throttled:                                   0.\nPages wired down:                            2815711.\nPages purgeable:                                5495.\n\"Translation faults\":                     2500147566.\nPages copy-on-write:                       239904831.\nPages zero filled:                        7656284952.\nPages reactivated:                          18922849.\nPages purged:                               10453530.\nFile-backed pages:                            442598.\nAnonymous pages:                              264594.\nPages stored in compressor:                  1081155.\nPages occupied by compressor:                 512737.\nDecompressions:                             33583112.\nCompressions:                               54741401.\nPageins:                                   164782824.\nPageouts:                                       5983.\nSwapins:                                      454812.\nSwapouts:                                     789985.\nPages tagged:                                 240386.\nPages tagged resident:                        133328.\nPages tagged compressed:                      107058.\nPages tag-storage:                            131072.\nPages tag-storage holding tags:                 8654.\nPages tag-storage free:                          661.\nPages tag-storage non-tag pageable:           121577.\nPages tag-storage non-tag wired:                   8.\nBytes of compressed tags:                   22219008.\nTagged compressions:                          969343.\nTagged decompressions:                        752688.\n",
+  "device_after": {
+    "device": "Apple M5 Max",
+    "hasUnifiedMemory": true,
+    "maxBufferLength": 41747087360,
+    "recommendedMaxWorkingSetSize": 60817408000,
+    "thermal_state": 0
+  },
+  "after_sysctl_vm.swapusage": "vm.swapusage: total = 7168.00M  used = 6523.00M  free = 645.00M  (encrypted)\n",
+  "after_sysctl_iogpu.wired_limit_mb": "iogpu.wired_limit_mb: 58000\n",
+  "after_vm_stat_vm_stat": "Mach Virtual Memory Statistics: (page size of 16384 bytes)\nPages free:                                   314809.\nPages active:                                 605757.\nPages inactive:                              2670772.\nPages speculative:                             21757.\nPages throttled:                                   0.\nPages wired down:                             276481.\nPages purgeable:                                7443.\n\"Translation faults\":                     2545258974.\nPages copy-on-write:                       240585062.\nPages zero filled:                        7667331825.\nPages reactivated:                          24328100.\nPages purged:                               11875428.\nFile-backed pages:                           3003009.\nAnonymous pages:                              295277.\nPages stored in compressor:                   533447.\nPages occupied by compressor:                 253916.\nDecompressions:                             36336200.\nCompressions:                               58456138.\nPageins:                                   167817506.\nPageouts:                                       7082.\nSwapins:                                      463789.\nSwapouts:                                     987957.\nPages tagged:                                 208735.\nPages tagged resident:                        123412.\nPages tagged compressed:                       85323.\nPages tag-storage:                            131072.\nPages tag-storage holding tags:                 7613.\nPages tag-storage free:                         3137.\nPages tag-storage non-tag pageable:           117901.\nPages tag-storage non-tag wired:                   9.\nBytes of compressed tags:                   18466752.\nTagged compressions:                         1089325.\nTagged decompressions:                        873992.\n",
+  "after_pmset_therm": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded\n",
+  "per_trial_thermal_state": "not sampled; only post-run ProcessInfo state and pmset observations"
+}

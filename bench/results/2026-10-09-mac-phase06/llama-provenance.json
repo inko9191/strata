@@ -1,0 +1,26 @@
+{
+  "node_id": "TA_kwDOJH_K4NoAKDY5ZWNhZTkyMmQyYjYwYzFmYThjNTkwMjc5ZjRlMjA5OWFmNzUxMTE",
+  "sha": "69ecae922d2b60c1fa8c590279f4e2099af75111",
+  "url": "https://api.github.com/repos/ggml-org/llama.cpp/git/tags/69ecae922d2b60c1fa8c590279f4e2099af75111",
+  "tagger": {
+    "name": "github-actions[bot]",
+    "email": "github-actions[bot]@users.noreply.github.com",
+    "date": "2026-10-05T16:56:17Z"
+  },
+  "object": {
+    "sha": "d81235049384534c167caea52b85a694f6103d14",
+    "type": "commit",
+    "url": "https://api.github.com/repos/ggml-org/llama.cpp/git/commits/d81235049384534c167caea52b85a694f6103d14"
+  },
+  "tag": "v0.6.0",
+  "message": "Release v0.6.0\n",
+  "verification": {
+    "verified": false,
+    "reason": "unsigned",
+    "signature": null,
+    "payload": null,
+    "verified_at": null
+  },
+  "archive_sha256": "6b58785f0a82898f4c3442417ff962e2d4b231b1bee5d033902ad90b27901e14",
+  "cli_version": "version: 0.6.0-dev (build 350, commit d81235049384534c167caea52b85a694f6103d14)\nbuilt with AppleClang 21.0.0.21000099 for Darwin arm64\n"
+}

@@ -1,0 +1,530 @@
+[
+  {
+    "file": "CMakeLists.txt",
+    "features": {
+      "AVX256": {
+        "occurrences": 7,
+        "symbols": [
+          "_mm256_dpbusd_avx_epi32",
+          "_mm256_dpbusd_epi32",
+          "_mm256_dpwssd_avx_epi32",
+          "_mm256_extract_epi32",
+          "_mm256_multishift_epi64_epi8",
+          "_mm256_set1_epi32"
+        ]
+      }
+    }
+  },
+  {
+    "file": "src/kernels/cpu/iq_avx2.cpp",
+    "features": {
+      "AVX256": {
+        "occurrences": 91,
+        "symbols": [
+          "_mm256_add_epi32",
+          "_mm256_add_ps",
+          "_mm256_and_ps",
+          "_mm256_and_si256",
+          "_mm256_castps256_ps128",
+          "_mm256_castps_si256",
+          "_mm256_castsi128_si256",
+          "_mm256_castsi256_ps",
+          "_mm256_castsi256_si128",
+          "_mm256_cmp_ps",
+          "_mm256_cmpeq_epi8",
+          "_mm256_cvtepu8_epi32",
+          "_mm256_extractf128_ps",
+          "_mm256_extracti128_si256",
+          "_mm256_i32gather_epi32",
+          "_mm256_i32gather_epi64",
+          "_mm256_inserti128_si256",
+          "_mm256_loadu_ps",
+          "_mm256_loadu_si256",
+          "_mm256_max_ps",
+          "_mm256_min_epi32",
+          "_mm256_movemask_ps",
+          "_mm256_mul_ps",
+          "_mm256_or_si256",
+          "_mm256_packs_epi16",
+          "_mm256_packs_epi32",
+          "_mm256_permutevar8x32_epi32",
+          "_mm256_set1_epi16",
+          "_mm256_set1_epi32",
+          "_mm256_set1_epi64x",
+          "_mm256_set1_epi8",
+          "_mm256_set1_ps",
+          "_mm256_set_epi32",
+          "_mm256_set_epi64x",
+          "_mm256_setr_epi32",
+          "_mm256_setr_epi8",
+          "_mm256_setzero_ps",
+          "_mm256_shuffle_epi8",
+          "_mm256_sign_epi8",
+          "_mm256_slli_epi32",
+          "_mm256_sllv_epi32",
+          "_mm256_srai_epi32",
+          "_mm256_storeu_si256",
+          "_mm256_sub_epi32"
+        ]
+      },
+      "SSE128": {
+        "occurrences": 55,
+        "symbols": [
+          "_mm_add_epi32",
+          "_mm_add_ps",
+          "_mm_and_si128",
+          "_mm_cvtepu8_epi32",
+          "_mm_cvtph_ps",
+          "_mm_cvtsi128_si32",
+          "_mm_cvtsi32_si128",
+          "_mm_cvtsi64_si128",
+          "_mm_cvtss_f32",
+          "_mm_hadd_ps",
+          "_mm_loadl_epi64",
+          "_mm_loadu_si128",
+          "_mm_max_ps",
+          "_mm_max_ss",
+          "_mm_movehdup_ps",
+          "_mm_movehl_ps",
+          "_mm_or_si128",
+          "_mm_prefetch",
+          "_mm_set1_epi16",
+          "_mm_set1_epi32",
+          "_mm_set1_epi8",
+          "_mm_setr_epi32",
+          "_mm_setr_epi8",
+          "_mm_shuffle_epi32",
+          "_mm_shuffle_epi8",
+          "_mm_sllv_epi32",
+          "_mm_srli_epi16",
+          "_mm_srlv_epi32",
+          "_mm_storeu_si128",
+          "_mm_unpacklo_epi8"
+        ]
+      }
+    }
+  },
+  {
+    "file": "src/kernels/cpu/expert.cpp",
+    "features": {
+      "AVX512": {
+        "occurrences": 94,
+        "symbols": [
+          "_mm512_add_epi32",
+          "_mm512_add_ps",
+          "_mm512_and_ps",
+          "_mm512_and_si512",
+          "_mm512_castps256_ps512",
+          "_mm512_castsi512_ps",
+          "_mm512_cmp_ps_mask",
+          "_mm512_cvtepi32_epi8",
+          "_mm512_cvtepi32_ps",
+          "_mm512_cvtepu16_epi64",
+          "_mm512_cvttps_epi32",
+          "_mm512_dpbusd_epi32",
+          "_mm512_fmadd_ps",
+          "_mm512_load_si512",
+          "_mm512_loadu_ps",
+          "_mm512_mask_blend_ps",
+          "_mm512_maskz_loadu_ps",
+          "_mm512_maskz_mov_ps",
+          "_mm512_max_epi32",
+          "_mm512_max_ps",
+          "_mm512_min_epi32",
+          "_mm512_mul_ps",
+          "_mm512_multishift_epi64_epi8",
+          "_mm512_permutexvar_ps",
+          "_mm512_reduce_add_epi32",
+          "_mm512_reduce_add_ps",
+          "_mm512_reduce_max_ps",
+          "_mm512_set1_epi32",
+          "_mm512_set1_epi64",
+          "_mm512_set1_epi8",
+          "_mm512_set1_ps",
+          "_mm512_setr_epi32",
+          "_mm512_setzero_ps",
+          "_mm512_setzero_si512"
+        ]
+      },
+      "AVX256": {
+        "occurrences": 68,
+        "symbols": [
+          "_mm256_and_si256",
+          "_mm256_andnot_ps",
+          "_mm256_castps256_ps128",
+          "_mm256_castsi256_si128",
+          "_mm256_cvtepi32_ps",
+          "_mm256_cvtepu16_epi64",
+          "_mm256_cvtph_ps",
+          "_mm256_cvtps_epi32",
+          "_mm256_dpbusd_epi32",
+          "_mm256_extractf128_ps",
+          "_mm256_extracti128_si256",
+          "_mm256_fmadd_ps",
+          "_mm256_load_si256",
+          "_mm256_loadu_ps",
+          "_mm256_max_ps",
+          "_mm256_mul_ps",
+          "_mm256_multishift_epi64_epi8",
+          "_mm256_packs_epi16",
+          "_mm256_packs_epi32",
+          "_mm256_permutevar8x32_epi32",
+          "_mm256_round_ps",
+          "_mm256_set1_epi64x",
+          "_mm256_set1_epi8",
+          "_mm256_set1_ps",
+          "_mm256_setr_epi32",
+          "_mm256_setzero_ps",
+          "_mm256_setzero_si256",
+          "_mm256_storeu_si256"
+        ]
+      },
+      "SSE128": {
+        "occurrences": 23,
+        "symbols": [
+          "_mm_add_epi32",
+          "_mm_add_ps",
+          "_mm_cvtps_ph",
+          "_mm_cvtsi128_si32",
+          "_mm_cvtss_f32",
+          "_mm_hadd_epi32",
+          "_mm_hadd_ps",
+          "_mm_load_si128",
+          "_mm_loadl_epi64",
+          "_mm_loadu_si128",
+          "_mm_maskz_loadu_epi16",
+          "_mm_max_ps",
+          "_mm_max_ss",
+          "_mm_movehdup_ps",
+          "_mm_movehl_ps",
+          "_mm_set_ss",
+          "_mm_storeu_si128"
+        ]
+      }
+    }
+  },
+  {
+    "file": "src/kernels/cpu/iq_avx2_parity.cpp",
+    "features": {
+      "cpuid": {
+        "occurrences": 4,
+        "symbols": [
+          "__cpuid",
+          "__cpuid_count",
+          "__cpuidex"
+        ]
+      }
+    }
+  },
+  {
+    "file": "src/kernels/cpu/expert_layout.cpp",
+    "features": {
+      "cpuid": {
+        "occurrences": 31,
+        "symbols": [
+          "__cpuid",
+          "__cpuid_count",
+          "__cpuidex",
+          "cpuid_regs"
+        ]
+      },
+      "xgetbv": {
+        "occurrences": 8,
+        "symbols": [
+          "_xgetbv",
+          "xgetbv"
+        ]
+      }
+    }
+  },
+  {
+    "file": "src/kernels/cpu/iq_avx512.cpp",
+    "features": {
+      "AVX512": {
+        "occurrences": 26,
+        "symbols": [
+          "_mm512_add_epi32",
+          "_mm512_cvtepi32_ps",
+          "_mm512_cvtepu8_epi32",
+          "_mm512_fmadd_ps",
+          "_mm512_i32gather_epi32",
+          "_mm512_loadu_si512",
+          "_mm512_madd_epi16",
+          "_mm512_maddubs_epi16",
+          "_mm512_mask_add_epi32",
+          "_mm512_mask_sub_epi8",
+          "_mm512_permutexvar_epi16",
+          "_mm512_reduce_add_ps",
+          "_mm512_set1_epi32",
+          "_mm512_set1_epi64",
+          "_mm512_set1_ps",
+          "_mm512_set_epi16",
+          "_mm512_set_epi32",
+          "_mm512_set_epi64",
+          "_mm512_setzero_ps",
+          "_mm512_setzero_si512"
+        ]
+      },
+      "SSE128": {
+        "occurrences": 7,
+        "symbols": [
+          "_mm_cvtph_ps",
+          "_mm_cvtsi32_si128",
+          "_mm_cvtss_f32",
+          "_mm_loadu_si128",
+          "_mm_prefetch"
+        ]
+      }
+    }
+  },
+  {
+    "file": "src/kernels/cpu/pool.cpp",
+    "features": {
+      "pause": {
+        "occurrences": 5,
+        "symbols": [
+          "_mm_pause"
+        ]
+      }
+    }
+  },
+  {
+    "file": "src/kernels/cpu/kq_avx2.cpp",
+    "features": {
+      "AVX256": {
+        "occurrences": 74,
+        "symbols": [
+          "_mm256_add_epi32",
+          "_mm256_and_si256",
+          "_mm256_castps256_ps128",
+          "_mm256_castsi128_si256",
+          "_mm256_castsi256_ps",
+          "_mm256_cmpeq_epi8",
+          "_mm256_cvtepi32_ps",
+          "_mm256_cvtepu16_epi32",
+          "_mm256_cvtepu8_epi16",
+          "_mm256_extractf128_ps",
+          "_mm256_extracti128_si256",
+          "_mm256_fmadd_ps",
+          "_mm256_insertf128_si256",
+          "_mm256_loadu_ps",
+          "_mm256_loadu_si256",
+          "_mm256_madd_epi16",
+          "_mm256_maddubs_epi16",
+          "_mm256_mul_ps",
+          "_mm256_or_si256",
+          "_mm256_set1_epi16",
+          "_mm256_set1_epi32",
+          "_mm256_set1_epi64x",
+          "_mm256_set1_epi8",
+          "_mm256_set1_ps",
+          "_mm256_set_epi64x",
+          "_mm256_setzero_ps",
+          "_mm256_setzero_si256",
+          "_mm256_shuffle_epi8",
+          "_mm256_sign_epi8",
+          "_mm256_slli_epi32",
+          "_mm256_srli_epi16"
+        ]
+      },
+      "SSE128": {
+        "occurrences": 25,
+        "symbols": [
+          "_mm_add_ps",
+          "_mm_add_ss",
+          "_mm_cvtepi32_ps",
+          "_mm_cvtph_ps",
+          "_mm_cvtsi32_si128",
+          "_mm_cvtss_f32",
+          "_mm_fmadd_ps",
+          "_mm_hadd_epi16",
+          "_mm_loadu_si128",
+          "_mm_madd_epi16",
+          "_mm_movehdup_ps",
+          "_mm_movehl_ps",
+          "_mm_set1_ps",
+          "_mm_set_epi32",
+          "_mm_setzero_ps",
+          "_mm_srli_epi16"
+        ]
+      }
+    }
+  },
+  {
+    "file": "src/kernels/cpu/q2_avx2.cpp",
+    "features": {
+      "AVX256": {
+        "occurrences": 70,
+        "symbols": [
+          "_mm256_add_epi16",
+          "_mm256_add_epi32",
+          "_mm256_add_ps",
+          "_mm256_and_ps",
+          "_mm256_and_si256",
+          "_mm256_blendv_ps",
+          "_mm256_castps128_ps256",
+          "_mm256_castps256_ps128",
+          "_mm256_castsi128_si256",
+          "_mm256_castsi256_ps",
+          "_mm256_castsi256_si128",
+          "_mm256_cmp_ps",
+          "_mm256_cvtepi32_ps",
+          "_mm256_cvttps_epi32",
+          "_mm256_extractf128_ps",
+          "_mm256_extracti128_si256",
+          "_mm256_fmadd_ps",
+          "_mm256_hadd_ps",
+          "_mm256_inserti128_si256",
+          "_mm256_load_ps",
+          "_mm256_load_si256",
+          "_mm256_loadu_ps",
+          "_mm256_madd_epi16",
+          "_mm256_maddubs_epi16",
+          "_mm256_max_epi32",
+          "_mm256_max_ps",
+          "_mm256_min_epi32",
+          "_mm256_mul_ps",
+          "_mm256_permutevar8x32_ps",
+          "_mm256_set1_epi16",
+          "_mm256_set1_epi32",
+          "_mm256_set1_epi8",
+          "_mm256_set1_ps",
+          "_mm256_set_m128i",
+          "_mm256_setr_epi32",
+          "_mm256_setzero_ps",
+          "_mm256_setzero_si256",
+          "_mm256_srli_epi16",
+          "_mm256_store_si256",
+          "_mm256_sub_epi32"
+        ]
+      },
+      "SSE128": {
+        "occurrences": 61,
+        "symbols": [
+          "_mm_add_epi32",
+          "_mm_add_ps",
+          "_mm_add_ss",
+          "_mm_and_si128",
+          "_mm_cvtph_ps",
+          "_mm_cvtsi128_si32",
+          "_mm_cvtsi32_si128",
+          "_mm_cvtss_f32",
+          "_mm_extract_epi16",
+          "_mm_loadu_si128",
+          "_mm_max_ps",
+          "_mm_max_ss",
+          "_mm_movehdup_ps",
+          "_mm_movehl_ps",
+          "_mm_sad_epu8",
+          "_mm_set1_epi8",
+          "_mm_setr_epi8",
+          "_mm_setzero_si128",
+          "_mm_shuffle_epi32",
+          "_mm_shuffle_epi8",
+          "_mm_srli_epi16",
+          "_mm_store_si128",
+          "_mm_storeu_ps",
+          "_mm_unpackhi_epi16",
+          "_mm_unpackhi_epi32",
+          "_mm_unpackhi_epi64",
+          "_mm_unpackhi_epi8",
+          "_mm_unpacklo_epi16",
+          "_mm_unpacklo_epi32",
+          "_mm_unpacklo_epi64",
+          "_mm_unpacklo_epi8",
+          "_mm_xor_si128"
+        ]
+      }
+    }
+  },
+  {
+    "file": "src/kernels/cpu/kq_avx1.cpp",
+    "features": {
+      "AVX256": {
+        "occurrences": 8,
+        "symbols": [
+          "_mm256_add_ps",
+          "_mm256_castps128_ps256",
+          "_mm256_castps256_ps128",
+          "_mm256_extractf128_ps",
+          "_mm256_insertf128_ps",
+          "_mm256_loadu_ps",
+          "_mm256_mul_ps",
+          "_mm256_setzero_ps"
+        ]
+      },
+      "SSE128": {
+        "occurrences": 14,
+        "symbols": [
+          "_mm_add_ps",
+          "_mm_add_ss",
+          "_mm_castsi128_ps",
+          "_mm_cvtss_f32",
+          "_mm_loadu_si128",
+          "_mm_movehl_ps",
+          "_mm_setzero_si128",
+          "_mm_shuffle_ps",
+          "_mm_slli_epi32",
+          "_mm_unpackhi_epi16",
+          "_mm_unpacklo_epi16"
+        ]
+      }
+    }
+  },
+  {
+    "file": "src/core/graph.cpp",
+    "features": {
+      "pause": {
+        "occurrences": 2,
+        "symbols": [
+          "_mm_pause"
+        ]
+      }
+    }
+  },
+  {
+    "file": "src/core/verify.cpp",
+    "features": {
+      "pause": {
+        "occurrences": 3,
+        "symbols": [
+          "_mm_pause"
+        ]
+      },
+      "sfence": {
+        "occurrences": 11,
+        "symbols": [
+          "_mm_sfence"
+        ]
+      }
+    }
+  },
+  {
+    "file": "src/core/session.cpp",
+    "features": {
+      "pause": {
+        "occurrences_including_comments": 2,
+        "symbols": [
+          "_mm_pause"
+        ]
+      },
+      "sfence": {
+        "occurrences_including_comments": 1,
+        "symbols": [
+          "_mm_sfence"
+        ]
+      }
+    }
+  },
+  {
+    "file": "src/core/mtp.cpp",
+    "features": {
+      "pause": {
+        "occurrences_including_comments": 2,
+        "symbols": [
+          "_mm_pause"
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "CMAKE_BUILD_TYPE": "Release",
+  "CMAKE_CXX_COMPILER": "/usr/bin/c++",
+  "CMAKE_OSX_ARCHITECTURES": "",
+  "GGML_BACKEND_DL": "OFF",
+  "GGML_BLAS": "OFF",
+  "GGML_CPU": "ON",
+  "GGML_METAL": "ON",
+  "GGML_NATIVE": "ON",
+  "LLAMA_BUILD_COMMIT": "3cf03257f219afbe7334045ff7c6a06ac68c627d"
+}

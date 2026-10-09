@@ -1,0 +1,30 @@
+{
+  "frozen_before_inference": true,
+  "generation": {
+    "temperature": 0,
+    "seed": 1234,
+    "max_generated_tokens": 32,
+    "context_limit": 512,
+    "repeat_penalty": 1.0,
+    "mtp": false,
+    "flash_attention": "off"
+  },
+  "prompts": [
+    {
+      "id": "english",
+      "text": "Explain in two short sentences why the sky appears blue."
+    },
+    {
+      "id": "japanese",
+      "text": "日本語で、朝の散歩の利点を二つ挙げてください。"
+    },
+    {
+      "id": "code",
+      "text": "Write a Python function that returns the larger of two integers."
+    }
+  ],
+  "cli_format": "Explicit identity Jinja template: raw prompt text only, no role delimiters or thinking prefix. Use raw-template.jinja on both CPU and Metal.",
+  "fallback_reference_format": "The standalone pinned llama API capture uses identical raw text, add_special=true, parse_special=true; exact input ids and all pre-greedy logits are saved. This is a diagnostic workload, not default chat-template quality.",
+  "benchmark_prompt_id": "english",
+  "other_prompts": "japanese and code are additional correctness captures, not included in the throughput median"
+}
