@@ -1,0 +1,13 @@
+{
+  "excluded": [
+    {
+      "label": "shader-off-r3",
+      "reason": "xctrace record did not finish in 180 s; SIGINT cleanup also exceeded 30 s. Driver record was not persisted. Owned server terminated; trace was not used."
+    },
+    {
+      "label": "shader-off-pilot",
+      "reason": "Initial template counter profile not supported on M5 Max; shader intervals empty. Replaced by Instruments UI profile 13."
+    }
+  ],
+  "stage_limitations": "Some empty CBs returned GPU start=0; invalid spans excluded and not used in the passive ratio. Stage op timestamps remain separate diagnostic measurements."
+}

@@ -1,0 +1,28 @@
+{
+  "phase": "0.7 only",
+  "production_files_changed": [],
+  "llama_archive_files_identical": 3687,
+  "external_probe_source_sha256": "5b60e4558c6a525acd9b7c24b7a1a44e70241b599f810dd89691acd5a26c2799",
+  "diagnostic_trials_validated": 12,
+  "normal_instruments_trials_validated": 6,
+  "normal_pilots_text_and_gpu_status_validated": 2,
+  "dense_total_bytes_verified": 2936153600,
+  "gpu_errors_in_valid_trials": [],
+  "comparison": "before/profiled/after generated text, not token IDs or logits",
+  "checks": [
+    "External C++/Objective-C diagnostic compilation and relink passed",
+    "Python syntax checks passed",
+    "Raw timestamp/capture-count/cache/draft-event/data assertions passed",
+    "git diff --check passed"
+  ],
+  "not_run": [
+    "Strata host build",
+    "Strata CPU / GPU parity",
+    "Linux CUDA/HIP/SYCL builds"
+  ],
+  "unverified": [
+    "Normal elapsed GPU time for every semantic category",
+    "Physical traffic and effective DRAM bandwidth per category",
+    "Exact kernel-gap versus CPU/driver/submit causal split"
+  ]
+}

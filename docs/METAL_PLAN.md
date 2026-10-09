@@ -650,3 +650,126 @@ best single trial は使わない。prompt と decode の最良 config は別な
 MTP on/off の出力契約と数値差は未解決。Phase 1 と既存 GPU backends の build は未実施。
 Phase 0.5 / 0.6 の記録だけを fork へ push し、モデル・build・大きな logits は含めず、
 upstream の PR は作らない。**Phase 0.6 はここで停止する。**
+
+
+## 12. Phase 0.7: decode と MTP の時間内訳
+
+2026-10-09、同じ Apple M5 Max / 64 GiB / macOS 27.0.1、llama.cpp v0.6.0
+(`d81235049384534c167caea52b85a694f6103d14`) と同じ IQ2_XS shards / MTP head を使用した。
+**以下は llama.cpp の計測で、Strata の性能ではない。** Strata / llama.cpp の source と
+Phase 0.6 の original binaries は変更していない。固定 archive 内の 3,687 source files の
+byte hash 一致を確認した。外部診断の build / relink は別ディレクトリに保存した。
+
+4K 本文、固定 prefix / instruction / no-thinking chat template を含む 4,034 input tokens、
+temp 0、seed 1、cache_prompt=false、PLE CPU / mmap、MTP n_max=3。詳細な argv、
+各 trial、native inventory、分類、再現手順は
+[Phase 0.7 報告](../bench/results/2026-10-09-mac-phase07/README.md) に保存した。
+exclusive lock を使い、採用試行で GPU error は検出されていない。
+計測前・中・後の生成 text は一致した。token-ID / logits parity を新たに確認したという意味ではない。
+
+### 12.1 通常の graph 構成を保った時間
+
+公開 Metal command-buffer timestamps と実際に選択された pipeline を外部から記録した。
+各 3 trials、off は 63 single-token graphs/trial、MTP は 25 m=4 verifications/trial。
+trial ごとの中央値を先に求め、下表はその中央値と範囲。
+
+| 区間 | median ms | trial median min–max ms |
+| --- | ---: | ---: |
+| MTP off、1 token の main GPU graph span | 19.706 | 19.541–19.800 |
+| 同 command-buffer interval union | 17.955 | 17.471–17.981 |
+| 同 command-buffer 間の隙間 | 1.688 | 1.596–2.244 |
+| 同 CPU encode / submit wall time | 3.822 | 3.730–4.420 |
+| MTP m=4、検証1回の main GPU graph span | 39.615 | 38.335–39.682 |
+| 同 command-buffer interval union | 39.279 | 38.334–39.427 |
+| 同 CPU encode / submit wall time | 4.399 | 3.401–4.539 |
+
+verification/single GPU span の比は **2.01034**。accepted token 当たりの時間ではなく、
+draft head / catch-up / sampling もこの比から除く。CPU encoding は GPU と overlap し、時間を足せない。
+外部記録にも負荷があり、passive off の server time は before 20.474 / profiled 21.836 /
+after 20.473 ms/output。無介入の throughput と同一ではない。
+
+unmodified original-build の標準 Instruments Metal System Trace pilot では、15 decode graphs の
+span median 19.847 ms、active Compute interval union 17.433 ms、span 内の no-active-Compute
+1.998 ms、graph 間 0.977 ms。これは shader occupancy ではなく driver execution intervals。
+CPU 処理 / command issuance / driver wait への因果的な分割は未確定。
+CPU graph 全体 (PLE + input embedding gather を含む) の passive median は off 0.031 ms、m=4 0.059 ms。
+PLE の native rows は 1,440 bytes/token、input embedding は 1,360 bytes/token。物理 SSD traffic ではない。
+
+### 12.2 区分別計測の限界
+
+Xcode 26.4.1 (17E202)、Instruments 16.0 (17E202) を使用した。
+初期 template の counter profile は M5 Max に対応せず Shader Timeline が空だったが、
+UI で Performance Limiters / Shader Timeline ON / Deferred / Default performance state を選び直すと
+shader samples を取得できた。**Sample Duration は網羅的な dispatch wall time ではない**。
+HC / head / PLE / router が同じ pipeline を共有し、shader 名だけでは区分も完全に分離できない。
+不足した時間を比例配分して通常実行の区分別時間を埋めない。
+
+追加の original-build Instruments captures を交互に各3 trials行った (32 outputs)。
+off 31 graphs / MTP 9 full-width verifications/trial。
+GPU span median は off **20.384 ms** (20.132–20.720)、m=4 **39.794 ms** (39.727–40.190)、ratio **1.95217**。
+active Compute union は **18.015 / 38.670 ms**、span 内の no-active-Compute は **2.564 / 1.298 ms**。
+off の graph 間は **1.178 ms**。対象processの Compute 非観測区間で、GPU全体の idle ではない。
+CPU CB encoding wall union **4.763 / 5.400 ms** は GPU と overlap する。
+shader Sample Duration 合計は **1.161 / 2.616 ms**に留まり、全 elapsed time の内訳ではない。
+IQ4_XS matvec samples が大きいが、head 等の semantic role を分けた通常の時間とは言えない。
+全6 tracesの thermal stateは **Nominal**、温度(℃)は未計測。
+保存 timeout の trial は除外して再取得した。最初の off capture 中は他traceの XML export が一部重なり、
+CPU encoding / gaps の交絡として明記した。この dataset を精密な serial 部分の比較に使わない。
+全 small intervals / samples / conditions は
+[Instruments 集計](../bench/results/2026-10-09-mac-phase07/instruments-summary.json) に保存した。
+
+この GPU の公開 sampling API は atStageBoundary をサポートし、atDispatchBoundary はサポートしない。
+別の診断で既存 fused op ごとに encoder を区切り、較正した stage timestamps を取得した。
+しかし off の server time は計測前 20.466 / 診断中 **74.625** / 計測後 20.420 ms/output となった。
+encoder 境界が concurrency / cache / overhead を変えるため、この内訳を通常実行の時間とは呼ばない。
+
+| 区分 | single diagnostic stage ms | native weights bytes/token | weight-equivalent diagnostic GB/s |
+| --- | ---: | ---: | ---: |
+| GDN (識別できた非 projection ops) | 0.805 | 5,930,496、処理全体の traffic は不明 | 不明 |
+| HC | 4.945 | 1,270,087,680 | 256.8 |
+| PLE GPU projections / conv / norms | 0.209 | 65,740,800 | 314.7 |
+| QSA (識別できた非 projection ops) | 1.491 | 36,864、処理全体の traffic は不明 | 不明 |
+| head と final HC | 0.636 | 350,863,360 | 551.3 |
+| その他 BF16 matvec | 0.894 | 182,845,440 | 204.4 |
+| その他 IQ3_S matvec | 0.568 | 146,995,200 | 258.9 |
+| その他 IQ4_XS matvec | 3.163 | 1,191,403,520 | 376.7 |
+| その他 Q6_K matvec | 0.228 | 73,113,600 | 320.3 |
+| その他 / 未分類 | 5.632 | 0、処理全体の traffic は不明 | 不明 |
+| routed experts | 4.570 | 692,480,000 | 151.5 |
+| shared expert | 1.823 | 135,221,760 | 74.2 |
+
+GB/s 列は **native weight operands / diagnostic stage time**。実効 DRAM bandwidth の実測ではない。
+activation / KV / GDN state / LUT / cache / tile 再読は含まれず、physical traffic は全区分で不明。
+graph の並べ替えで匿名中間ノードの役割を確定できないものは other に残した。
+HC / GDN / QSA 等は識別できた op の部分集計で、区分全体の時間ではない。
+CSV / per-op audit / 集計コードを報告に保存した。各区分 median の和は全体 median と一致しない。
+通常経路の完全な区分別 elapsed GPU time と physical bytes / GB/s は未検証として残る。
+
+### 12.3 非エキスパート dense の型と MTP の再利用
+
+2,936,153,600 dense bytes を tensor kind / dtype の 45 rows に分解した。
+BF16 1,514,536,960、IQ4_XS 1,191,403,520、IQ3_S 146,995,200、Q6_K 73,113,600、
+F32 10,022,400、F16 81,920 bytes。Q8_0 はこの dense 集合にはない。
+HC attn / FFN down / up の4種類だけで **1,258,291,200 bytes、42.855%**を占める。
+全 kind/type rows は [CSV](../bench/results/2026-10-09-mac-phase07/dense-by-kind-type.csv) を参照。
+
+m=4 verification で `mul_mm*` は観測されない。固定 source の predicates は通常 MM に >8 columns、
+expert MM に >=32 tokens を要求する。ただし **mul_mv という名前でも再利用はある**。
+`mul_mv_ext_bf16...r1_4` 等は1 decoded weight vector と4 input rows を同じ内側 loop で使い、
+Q6_K / Q8_0 は few-row `mul_mv_mma` を使う。generic IQ4_XS / IQ3_S と expert `mul_mv_id` は
+token ごとの grid を残す。cache による物理再利用は不明。
+1 m=4 main graph を実行しており、4回の host forward ではない。head の lazy selection / 全 tensor shapes /
+expert union は未収録なので、§11.2 の16.46 GB/pass 等を physical traffic として採用しない。
+
+### 12.4 結論と次に必要な証拠
+
+**特定 kernel の改善で十分か、Strata の構成が必要かは断定できない。** HC の大きい BF16 行列と
+その他 IQ4_XS 行列は調査対象として大きいが、診断時の ranking を通常実行の ranking と置き換えない。
+llama.cpp もすでにまとめた検証、few-row weight reuse、HC / norm / routing 等の融合を持つ。
+Strata だけが batch / fusion を持つという説明は測定と一致しない。
+
+不足するのは、encoder を変えない区分別 elapsed time、physical traffic / stalls の区分別対応、
+全 operand shapes / head selection、検証ごとの expert union / physical traffic と accepted tokens の対応。
+これらがない間は両方の仮説を保留し、最適化を入れない。Strata の速度予測は書かない。
+Phase 0.7 の小さい記録だけを fork へ push し、raw trace / models / builds / 大きい logits は含めない。
+upstream PR は作らず、**Phase 1 に進まず停止する。**

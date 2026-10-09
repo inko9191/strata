@@ -1,0 +1,12 @@
+{
+  "device": "Apple M5 Max",
+  "method": "xcrun swift, MTLCreateSystemDefaultDevice, supportsCounterSampling, counterSets; public Metal API",
+  "at_dispatch_boundary": false,
+  "at_stage_boundary": true,
+  "at_blit_boundary": false,
+  "counter_sets": {
+    "timestamp": [
+      "GPUTimestamp"
+    ]
+  }
+}

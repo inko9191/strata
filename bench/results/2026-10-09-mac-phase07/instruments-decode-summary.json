@@ -1,0 +1,159 @@
+{
+  "method": "Unmodified original build, standard Instruments Metal System Trace; target process non-Blit Compute intervals, unioned to avoid double counting nesting/overlap. Consecutive pairs; discard first 3 prefill groups, retain 15 decode groups. Shape/count cross-checked with passive public-API calls.",
+  "buffer_count": 36,
+  "blit_interval_count": 16,
+  "request_timings": {
+    "cache_n": 0,
+    "prompt_n": 4034,
+    "prompt_ms": 3494.071,
+    "prompt_per_token_ms": 0.8661554288547347,
+    "prompt_per_second": 1154.527197644238,
+    "predicted_n": 16,
+    "predicted_ms": 313.931,
+    "predicted_per_token_ms": 20.928733333333334,
+    "predicted_per_second": 47.781200327460496
+  },
+  "decode_groups": [
+    {
+      "decode_index": 0,
+      "span_ms": 19.387417,
+      "active_compute_ms": 17.306876,
+      "within_span_no_active_compute_ms": 2.080541,
+      "start_ns": 7541781083,
+      "end_ns": 7561168500,
+      "between_graph_no_active_compute_ms": 0.973916
+    },
+    {
+      "decode_index": 1,
+      "span_ms": 19.1275,
+      "active_compute_ms": 17.177208,
+      "within_span_no_active_compute_ms": 1.950292000000001,
+      "start_ns": 7562142416,
+      "end_ns": 7581269916,
+      "between_graph_no_active_compute_ms": 0.974209
+    },
+    {
+      "decode_index": 2,
+      "span_ms": 19.172125,
+      "active_compute_ms": 17.224375,
+      "within_span_no_active_compute_ms": 1.9477500000000028,
+      "start_ns": 7582244125,
+      "end_ns": 7601416250,
+      "between_graph_no_active_compute_ms": 0.89825
+    },
+    {
+      "decode_index": 3,
+      "span_ms": 19.309083,
+      "active_compute_ms": 17.420708,
+      "within_span_no_active_compute_ms": 1.888375,
+      "start_ns": 7602314500,
+      "end_ns": 7621623583,
+      "between_graph_no_active_compute_ms": 1.003542
+    },
+    {
+      "decode_index": 4,
+      "span_ms": 19.9095,
+      "active_compute_ms": 17.911084,
+      "within_span_no_active_compute_ms": 1.9984160000000024,
+      "start_ns": 7622627125,
+      "end_ns": 7642536625,
+      "between_graph_no_active_compute_ms": 1.081083
+    },
+    {
+      "decode_index": 5,
+      "span_ms": 19.847292,
+      "active_compute_ms": 17.1885,
+      "within_span_no_active_compute_ms": 2.6587919999999983,
+      "start_ns": 7643617708,
+      "end_ns": 7663465000,
+      "between_graph_no_active_compute_ms": 0.929791
+    },
+    {
+      "decode_index": 6,
+      "span_ms": 19.201667,
+      "active_compute_ms": 17.298375,
+      "within_span_no_active_compute_ms": 1.9032920000000004,
+      "start_ns": 7664394791,
+      "end_ns": 7683596458,
+      "between_graph_no_active_compute_ms": 0.943333
+    },
+    {
+      "decode_index": 7,
+      "span_ms": 19.115417,
+      "active_compute_ms": 17.238334,
+      "within_span_no_active_compute_ms": 1.8770830000000025,
+      "start_ns": 7684539791,
+      "end_ns": 7703655208,
+      "between_graph_no_active_compute_ms": 0.9025
+    },
+    {
+      "decode_index": 8,
+      "span_ms": 19.473542,
+      "active_compute_ms": 17.627125,
+      "within_span_no_active_compute_ms": 1.8464169999999989,
+      "start_ns": 7704557708,
+      "end_ns": 7724031250,
+      "between_graph_no_active_compute_ms": 1.133583
+    },
+    {
+      "decode_index": 9,
+      "span_ms": 20.058375,
+      "active_compute_ms": 18.109041,
+      "within_span_no_active_compute_ms": 1.9493340000000003,
+      "start_ns": 7725164833,
+      "end_ns": 7745223208,
+      "between_graph_no_active_compute_ms": 1.061042
+    },
+    {
+      "decode_index": 10,
+      "span_ms": 20.072375,
+      "active_compute_ms": 17.432584,
+      "within_span_no_active_compute_ms": 2.6397910000000024,
+      "start_ns": 7746284250,
+      "end_ns": 7766356625,
+      "between_graph_no_active_compute_ms": 0.9645
+    },
+    {
+      "decode_index": 11,
+      "span_ms": 19.966375,
+      "active_compute_ms": 17.468083,
+      "within_span_no_active_compute_ms": 2.4982919999999993,
+      "start_ns": 7767321125,
+      "end_ns": 7787287500,
+      "between_graph_no_active_compute_ms": 0.979375
+    },
+    {
+      "decode_index": 12,
+      "span_ms": 20.162375,
+      "active_compute_ms": 17.948708,
+      "within_span_no_active_compute_ms": 2.213667000000001,
+      "start_ns": 7788266875,
+      "end_ns": 7808429250,
+      "between_graph_no_active_compute_ms": 1.271083
+    },
+    {
+      "decode_index": 13,
+      "span_ms": 21.1475,
+      "active_compute_ms": 18.046083,
+      "within_span_no_active_compute_ms": 3.1014170000000014,
+      "start_ns": 7809700333,
+      "end_ns": 7830847833,
+      "between_graph_no_active_compute_ms": 1.259083
+    },
+    {
+      "decode_index": 14,
+      "span_ms": 19.980209,
+      "active_compute_ms": 17.820834,
+      "within_span_no_active_compute_ms": 2.159374999999997,
+      "start_ns": 7832106916,
+      "end_ns": 7852087125
+    }
+  ],
+  "medians": {
+    "span_ms": 19.847292,
+    "active_compute_ms": 17.432584,
+    "within_span_no_active_compute_ms": 1.9984160000000024,
+    "between_graph_no_active_compute_ms": 0.976792
+  },
+  "limitations": "No shader intervals. Active Compute intervals are driver GPU execution intervals, not proof of ALU occupancy or memory activity. No causal CPU/encoding split."
+}

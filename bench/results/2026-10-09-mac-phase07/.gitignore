@@ -1,0 +1,12 @@
+*.log
+*.trace
+*.xml
+__pycache__/
+# Excluded diagnostic development captures; final cohorts are named final-* / shader-*-r*.
+passive-*.json
+cpu-passive-*.json
+stage-*.json
+*-pilot.json
+cpu-rows-check.json
+dense-by-kind-type.json
+shader-off-r3.json

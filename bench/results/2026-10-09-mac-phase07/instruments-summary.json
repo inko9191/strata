@@ -1,0 +1,153 @@
+{
+  "method": "Unmodified original v0.6.0 build; normal encoder topology; Instruments Shader Timeline samples are not exhaustive dispatch durations.",
+  "groups": {
+    "off": {
+      "labels": [
+        "shader-off-r1",
+        "shader-off-r2",
+        "shader-off-r3-retry"
+      ],
+      "n": 3,
+      "graphs_per_trial": [
+        31,
+        31,
+        31
+      ],
+      "medians": {
+        "span_ms": {
+          "median": 20.384292,
+          "min": 20.132209,
+          "max": 20.719667
+        },
+        "within_span_no_active_compute_ms": {
+          "median": 2.563875,
+          "min": 2.413334,
+          "max": 2.674583
+        },
+        "active_compute_ms": {
+          "median": 18.015417,
+          "min": 17.675542,
+          "max": 18.221125
+        },
+        "cpu_cb_encoding_ms": {
+          "median": 4.763208,
+          "min": 4.644959,
+          "max": 4.821709
+        },
+        "between_graph_no_active_compute_ms": {
+          "median": 1.1781665000000001,
+          "min": 1.1262915,
+          "max": 1.2079795
+        },
+        "shader_sample_ms_sum": {
+          "median": 1.16125,
+          "min": 1.104627,
+          "max": 1.176168
+        },
+        "shader_sample_ms_by_category": {
+          "GDN named kernels": 0.017751,
+          "HC named kernels": 0.003084,
+          "QSA named kernels": 0.11,
+          "matvec bf16 (mixed semantic roles)": 0.053125000000000006,
+          "matvec iq3_s (mixed semantic roles)": 0,
+          "matvec iq4_nl (mixed semantic roles)": 0.007624000000000001,
+          "matvec iq4_xs (mixed semantic roles)": 0.624542,
+          "matvec q2_0 (mixed semantic roles)": 0.008875,
+          "matvec q6_K (mixed semantic roles)": 0.027834,
+          "matvec q8_0 (mixed semantic roles)": 0.008874,
+          "other / semantic role unavailable": 0.11954500000000005,
+          "routed experts matvec": 0.14058299999999999,
+          "routing/reduction named kernels": 0.017708
+        }
+      },
+      "thermal_states": [
+        [
+          "Nominal"
+        ],
+        [
+          "Nominal"
+        ],
+        [
+          "Nominal"
+        ]
+      ],
+      "server_ms_per_output": {
+        "before": 20.364483870967742,
+        "profiled": 21.706451612903226,
+        "after": 20.786290322580644
+      }
+    },
+    "mtp3": {
+      "labels": [
+        "shader-mtp3-r1",
+        "shader-mtp3-r2",
+        "shader-mtp3-r3"
+      ],
+      "n": 3,
+      "graphs_per_trial": [
+        9,
+        9,
+        9
+      ],
+      "medians": {
+        "span_ms": {
+          "median": 39.793625,
+          "min": 39.726958,
+          "max": 40.190084
+        },
+        "within_span_no_active_compute_ms": {
+          "median": 1.297958,
+          "min": 1.094292,
+          "max": 1.310334
+        },
+        "active_compute_ms": {
+          "median": 38.669958,
+          "min": 38.601542,
+          "max": 38.955917
+        },
+        "cpu_cb_encoding_ms": {
+          "median": 5.399834,
+          "min": 5.325166,
+          "max": 5.420542
+        },
+        "shader_sample_ms_sum": {
+          "median": 2.61558,
+          "min": 2.612792,
+          "max": 3.0152069999999997
+        },
+        "shader_sample_ms_by_category": {
+          "GDN named kernels": 0,
+          "HC named kernels": 0.0050420000000000005,
+          "QSA named kernels": 0.23812499999999998,
+          "matvec bf16 (mixed semantic roles)": 0.137791,
+          "matvec iq3_s (mixed semantic roles)": 0,
+          "matvec iq4_nl (mixed semantic roles)": 0.016459,
+          "matvec iq4_xs (mixed semantic roles)": 1.6159999999999999,
+          "matvec q2_0 (mixed semantic roles)": 0.006334,
+          "matvec q6_K (mixed semantic roles)": 0.033708,
+          "matvec q8_0 (mixed semantic roles)": 0.006333,
+          "other / semantic role unavailable": 0.10974800000000004,
+          "routed experts matvec": 0.46529100000000007,
+          "routing/reduction named kernels": 0.017709
+        }
+      },
+      "thermal_states": [
+        [
+          "Nominal"
+        ],
+        [
+          "Nominal"
+        ],
+        [
+          "Nominal"
+        ]
+      ],
+      "server_ms_per_output": {
+        "before": 16.321677419354838,
+        "profiled": 17.13593548387097,
+        "after": 16.361032258064515
+      }
+    }
+  },
+  "mtp_to_single_span_ratio": 1.9521710638760474
+}

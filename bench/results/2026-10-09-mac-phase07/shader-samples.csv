@@ -1,0 +1,14 @@
+kernel_category,off_sample_ms_per_graph,mtp4_sample_ms_per_graph,normal_elapsed_ms_per_category
+GDN named kernels,0.017751,0,unknown
+HC named kernels,0.003084,0.0050420000000000005,unknown
+QSA named kernels,0.11,0.23812499999999998,unknown
+matvec bf16 (mixed semantic roles),0.053125000000000006,0.137791,unknown
+matvec iq3_s (mixed semantic roles),0,0,unknown
+matvec iq4_nl (mixed semantic roles),0.007624000000000001,0.016459,unknown
+matvec iq4_xs (mixed semantic roles),0.624542,1.6159999999999999,unknown
+matvec q2_0 (mixed semantic roles),0.008875,0.006334,unknown
+matvec q6_K (mixed semantic roles),0.027834,0.033708,unknown
+matvec q8_0 (mixed semantic roles),0.008874,0.006333,unknown
+other / semantic role unavailable,0.11954500000000005,0.10974800000000004,unknown
+routed experts matvec,0.14058299999999999,0.46529100000000007,unknown
+routing/reduction named kernels,0.017708,0.017709,unknown

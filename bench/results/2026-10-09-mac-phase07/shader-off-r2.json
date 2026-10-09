@@ -1,0 +1,238 @@
+{
+  "config": "off",
+  "label": "shader-off-r2",
+  "command": [
+    "/Users/hirakatayuuyuu/Downloads/qwen38 Flash/Niko-Strata/build-mac-phase06/llama-metal/bin/llama-server",
+    "-m",
+    "/Users/hirakatayuuyuu/Downloads/qwen38 Flash/Niko-Strata/build-mac-phase05/models/Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8196",
+    "-np",
+    "1",
+    "--no-webui",
+    "--jinja",
+    "-ngl",
+    "99",
+    "-ot",
+    "per_layer_token_embd.weight=CPU",
+    "--fit",
+    "off",
+    "--lazy-mode",
+    "on",
+    "-b",
+    "2048",
+    "-ub",
+    "2048",
+    "-c",
+    "36864",
+    "-ctk",
+    "q8_0",
+    "-ctv",
+    "q8_0",
+    "-fa",
+    "on",
+    "-t",
+    "8",
+    "-tb",
+    "8",
+    "--metrics",
+    "--no-warmup",
+    "--log-colors",
+    "off"
+  ],
+  "output_tokens": 32,
+  "env": {
+    "LLAMA_TRACE": "1"
+  },
+  "started_utc": "2026-10-09T13:10:34Z",
+  "before": {
+    "response": {
+      "choices": [
+        {
+          "finish_reason": "length",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "Strata is a high-performance inference engine that achieves significant speed improvements through fused int8 tensor-core kernels, speculative decoding, and optimized memory management strategies like KV streaming"
+          }
+        }
+      ],
+      "created": 1791551443,
+      "model": "/Users/hirakatayuuyuu/Downloads/qwen38 Flash/Niko-Strata/build-mac-phase05/models/Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+      "system_fingerprint": "b350-d81235049384534c167caea52b85a694f6103d14",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 32,
+        "prompt_tokens": 4034,
+        "total_tokens": 4066,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-BQzQMsXSVt26L3G07SAlGAjNdTC6PZfd",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 4034,
+        "prompt_ms": 3464.835,
+        "prompt_per_token_ms": 0.8589080317302925,
+        "prompt_per_second": 1164.269005594783,
+        "predicted_n": 32,
+        "predicted_ms": 637.879,
+        "predicted_per_token_ms": 20.57674193548387,
+        "predicted_per_second": 48.59855866081185
+      }
+    },
+    "wall_seconds": 4.1312179589876905
+  },
+  "trace_command": [
+    "xcrun",
+    "xctrace",
+    "record",
+    "--template",
+    "build-mac-phase07/Phase07-M5-Shader.tracetemplate",
+    "--time-limit",
+    "25s",
+    "--output",
+    "/Users/hirakatayuuyuu/Downloads/qwen38 Flash/Niko-Strata/build-mac-phase07/shader-off-r2.trace",
+    "--attach",
+    "85426"
+  ],
+  "profiled": {
+    "request": {
+      "model": "x",
+      "messages": [
+        {
+          "role": "user",
+          "content": "[bench mac-phase07 4k]\n# Strata - the details\n\nThe technical side of Strata: every measured number, the API, images, all settings and how the engine works.\nNew here? Start with the [README](../README.md); installing step by step is in [INSTALL.md](INSTALL.md), the models in\n[MODELS.md](MODELS.md), common problems in [TROUBLESHOOTING.md](TROUBLESHOOTING.md).\n\n> **On this page:** [Speed](#speed-measured) · [Other GPUs](#other-gpus-estimated) · [Which model?](#which-model) ·\n> [Requirements](#before-you-start) · [Windows](#windows) · [Linux](#linux) · [API](#using-it) ·\n> [MCP tools](#tools-from-mcp-servers) · [MCP server](#manage-strata-from-your-ai-assistant-mcp-server) ·\n> [Images](#images-vision) ·\n> [Troubleshooting](#troubleshooting) · [How it works](#how-it-works)\n\n---\n\n## Speed (measured)\n\nRTX 5070 **12 GB**, Ryzen 5 7600 (6 cores), 64 GB DDR5-5200, Windows, engine 0.1.26 with the settings setup writes\n(`--prefill auto`, 8-bit KV above 4K, KV streaming from 64K). One code-agent prompt per length, 256 generated tokens,\nMTP speculative decoding on. \"262K\" is the model's full context window (a 259,943-token prompt). The IQ2_XS row was\nmeasured with Swift 1.5's IQ2_XS, which runs at the original's speed.\n\n**Engine 0.1.36 (#136), the same PC:** Q2_0's prompt experts run on fused int8 tensor-core kernels (RTX 30 and newer):\n4K 1,294 -> 1,570, 32K 2,170 -> 2,653, 128K 2,123 -> 2,468 tokens/s (+16-22%), as close to an FP16 reference as the\nprevious kernels (closer at 32K: teacher-forced KL 0.009 vs 0.012). The decode path's block selection and greedy\nargmax run on thread-block clusters (RTX 50, sm_90+; other cards keep the previous kernels; the same tokens): Q2_0 output at 4K 89 -> 93.5, at 128K\n64.5 -> 76.4 tokens/s. `STRATA_PF_FUSED=0` keeps the previous prompt kernels (byte-identical answers to 0.1.35);\n`STRATA_PF_FUSED=1` also runs the native IQ packs' fused kernels (opt-in: IQ2_XS prompts +12% at 4K, +3% at 32K, the\nIQ3 packs about even); `STRATA_QSA_CLUSTER=0` / `STRATA_ARGMAX_MULTI=0` turn the decode kernels off. The tables\nbelow are 0.1.26's.\n\n### Prompt processing (tokens/s)\n\n| Model | 1K | 4K | 32K | 64K | 128K | 262K |\n| --- | ---: | ---: | ---: | ---: | ---: | ---: |\n| **Q2_0** | 536 | 1,299 | 2,171 | 2,126 | 2,107 | 1,304† |\n| **IQ2_XS** | 534 | 1,256 | 2,092 | 1,754 | 1,752 | 1,181*† |\n| **IQ3_XXS** | 482 | 1,007 | 1,745 | 1,609 | 1,602 | - |\n| **IQ3_S** | 427 | 913 | 1,624 | 1,640 | 1,443 | - |\n| **Coder** | 656 | 1,583 | 2,177 | 2,236 | 2,208 | 1,034** |\n\nEngine 0.1.26; `bench/results/2026-09-29-speed-0126`. At 32K-128K that is 8-28% faster than 0.1.22. † not measured\nagain: 0.1.22. \\* measured with images on (the image encoder's VRAM reserve leaves fewer experts cached). \\*\\* not\nmeasured again: 0.1.14.\n\n### Output (tokens/s)\n\n| Model | 1K | 4K | 32K | 64K | 128K | 262K |\n| --- | ---: | ---: | ---: | ---: | ---: | ---: |\n| **Q2_0** | 87.3 | 93.0 | 81.8 | 76.2 | 73.7 | 60.3† |\n| **IQ2_XS** | 79.6 | 78.6 | 76.3 | 63.7 | 62.7 | 52.8† |\n| **IQ3_XXS** | 61.9 | 61.6 | 58.5 | 57.2 | 49.0 | - |\n| **IQ3_S** | 52.4 | 53.3 | 48.3 | 46.3 | 45.5 | - |\n| **Coder** | 58.9 | 55.1 | 54.9 | 53.2 | 43.0 | 42.8† |\n\nEngine 0.1.26, the same runs. † not measured again: 0.1.14.\n\nOutput speed depends on the text as well: speculative decoding runs faster when more of the drafted tokens are\naccepted, so a different answer to the same prompt moves it by several percent. Run back to back on the 4K prompt,\n0.1.14 writes 88.5 tokens/s and 0.1.12 85.7. The numbers before 0.1.13 (prompts about half as fast):\n[`bench/results/2026-09-24-final`](../bench/results/2026-09-24-final/matrix.md); these:\n[`bench/results/2026-09-28-speed-0114`](../bench/results/2026-09-28-speed-0114/README.md).\n\nIQ3_XXS and IQ3_S at 262K are not measured: with their 43 / 50 GB of experts, a 260K-token context brings a 64 GB PC\nto its memory limit by setup's estimate (the experts + the context's KV cache + 24 GB), so setup recommends up to 128K\nwith them on 64 GB. A longer context you choose (`--context 262144`, or a pick in its list) is kept, with a note: users\nran IQ3_S at 256K on 64 GB with RAM to spare (#406). In the low-RAM mode the KV cache stays in VRAM and the context\ndoes not count against RAM. IQ3_S (engine 0.1.4 or newer) is only published for the original model, not for Swift 1.5.\n\n**KV streaming (engine 0.1.5):** at 64K and more, setup keeps the context's KV cache in RAM and only the part the\nattention reads in VRAM (`--kv-resident 32768`), so more experts fit on the GPU. Q2_0 at 262K: 50.9 -> 62.6 tokens/s\n(1,589 -> 3,872 experts in VRAM); at 128K about +6%. The attention reads exactly the same values (only where the KV lives changes); it\ncosts ~13.7 KB of RAM per context token (1.7 GB at 128K). Existing installs: run `START-HERE.bat --setup` once to turn\nit on. Setup turns it on when the RAM has room for it; `--kv-streaming on|off` overrides that (on past the RAM test with a\nnote; never under WSL, which cannot stream).\n\n**4-bit KV cache (engine 0.1.8, optional):** `START-HERE.bat --setup` asks above 8K context (or pass `--kv q4_0`). It\nhalves the KV cache's memory with a Hadamard rotation before 4-bit rounding (PR #21), about 4% faster at 128K, but it\nis measurably less precise on long documents (perplexity +8-12%; needle tests still pass). 8-bit stays the default.\nDetails: [`bench/results/2026-09-27-kv-q4`](../bench/results/2026-09-27-kv-q4/README.md).\n\n**Hybrid K8V4 KV cache (engine 0.1.25, optional, PR #120):** `--kv k8v4` (`START-HERE.bat --setup --kv k8v4`) keeps\nthe keys at 8 bits and stores the values as rotated 4-bit: 23% less KV memory than 8-bit, so more experts fit in\nVRAM. RTX 3090, the Coder at 198K context: 99 instead of 85 tokens/s output, the same needle results, prompts 2-5%\nslower. It streams its KV cache like the other formats (`--kv-resident N`): on an RTX 2060 SUPER 8 GB at 128K with\n20,480 resident cells, +780 expert slots over resident K8V4, and it scores better than 4-bit KV on long documents.\n\n**Reproducible greedy output (0.1.30, opt-in, `STRATA_IQ_MT_MIN=1`):** with the IQ models, the CPU computes an\nexpert for one token with ggml's dot product and for several tokens with Strata's multi-token kernels, which round\nslightly differently. How many tokens share an expert depends on the drafts in a verify window, so the same prompt\nat temperature 0 can end in a different (equally good) answer when the drafting, the cache state or a resumed\nconversation differ (issue #152). `STRATA_IQ_MT_MIN=1` (in the config's `env`) uses the multi-token kernels for\nevery group: the answer then no longer depends on the drafting. Measured on a Ryzen 7600 (AVX-512): IQ3_S decode\n-1..-3%, the other models the same; the default stays the fastest rule. On an Intel CPU of Alder Lake or later\nwithout AVX-512, where the AVX-2 kernel gathers the IQ3_S grid, `STRATA_IQ3S_MT1=1` (opt-in) gives IQ3_S the multi-token\nkernel for one token, which is the faster one there; it changes a lone token's rounding, so it is off by default. Through the server, two more things carry\nover from one request to the next (#410): the adaptive tier moves experts between RAM and VRAM (the GPU and the CPU\nround an expert differently), and the prompt cache resumes a repeated prompt and reads only its tail through the\ndecode path. For byte-identical repeats add `--prompt-cache 0 --adapt-swaps 0 --pcie-frac 0` to the engine's args\nas well (#410): the PCIe share of the missed experts (computed on the GPU instead of the CPU) still made the first\nanswer after a start differ from the next ones. Measured here (IQ3_XXS, a 3.6K-token prompt, 4 repeats): with all\nthree switches 1 answer of 4, without `--pcie-frac 0` 2 of 4 (the first one differs), with the defaults 2 of 4.\n`--pcie-frac 0` costs decode speed (the missed experts all run on the CPU), so keep it for A/B runs.\n\n**The draft layer's tokens (0.1.27, `--draft-vocab`):** the MTP draft layer can only propose tokens from a subset\nof the vocabulary (`mtp/rt/draft_vocab.bin`). Since 0.1.27 the subset includes every Chinese, Japanese and Korean\ntoken (106,299 ids), so answers in those languages are 15-38% faster (Q2_0, RTX 5070). Its head takes ~180 MiB of\nVRAM, which the expert cache leaves free for it (0.1.28). `START-HERE.bat --setup --draft-vocab en` keeps the\nEnglish/code subset from before (40,525 ids, ~110 MiB less VRAM, English answers 1-2% faster; CJK answers get\nalmost no drafts). `--draft-vocab cyrillic` takes the English/code subset plus the whole Cyrillic script (58,963\nids): the shipped subsets hold 142 of the vocabulary's 18,580 Cyrillic tokens, so Ukrainian or Russian answers got\n1.4 tokens a round; with it 2.1, and 83 -> 109 tokens/s (RTX 5090, the NVFP4 fork), English unchanged.\n`--draft-vocab fr` (0.1.39, #597) takes the English/code subset plus the 5,686 tokens that cover 99% of a French\nWikipedia corpus (46,211 ids, `tools/draft_vocab.py --corpus`): 23.6% of French text's tokens were outside the\nEnglish/code subset, 0.7% are outside this one. Drafts accepted in French answers 0.51 -> 0.60 (IQ3_XXS, RTX 5070,\n8 prompts x 2 passes; English 0.61 -> 0.63 and code 0.77 -> 0.78, no loss), and 141 -> 158 tok/s in French on an\nRTX 5090 (IQ3_S, the reporter's measurement).\n`tools/draft_vocab.py` builds and inspects subsets. When the start stops with \"the draft head does not fit\" (a\n12 GB card with a long context, #474), the engine says how much the head needs, how much VRAM is free and which\nsmaller subset fits, and the server's start error repeats it; setup suggests `--draft-vocab en` on cards under\n14 GB (only a suggestion: nothing changes unless you pass it).\n\n**Serving without the draft layer (`--mtp` is optional):** `serve` runs without `--mtp`. Drafts then come from the\nsuffix/prompt-lookup drafter only (or one token per round), every token is still verified against the model, and the\ndraft layer's VRAM (~0.7-1 GiB with its head) goes to the expert cache: 1,000 -> 1,678 slots in one A/B on an 8 GB\ncard. The conversation cache (`--conversation-cache-mib`) stays on: a parked conversation then carries no draft K/V.\n\n**Low-RAM mode (engine 0.1.26, chosen by setup):** normally all of a model's experts are copied into RAM (23-50 GB,\npinned) and the GPU holds a copy of the most-used ones. On a PC whose RAM cannot hold them beside the system (the\nexperts plus ~10 GB), setup instead maps them from one file in the model's folder (`--mmap-experts`, the pack's\n`experts.bin`, +23-50 GB of disk). The OS file cache holds what the GPU does not, and it can give that memory back.\nOn the Coder the engine's committed memory drops from 36 to ~13 GB, with the same answers. With a big GPU (an RTX\n5090 holds all of the Coder's experts, most of Q2_0's) it runs at nearly the usual speed. With a small one, most\nexperts come from the SSD and it is much slower (setup says so). `START-HERE.bat --setup --low-ram on|off` overrides\nthe choice.\n\n**Low-RAM mode, resident (engine 0.1.30):** when the experts the GPU does not hold fit the RAM (with the same ~10 GB\nbeside them), setup picks the resident variant instead (`--resident-experts`): at start the engine copies exactly those\nexperts from `experts.bin` into RAM (page-locked when the driver allows, else locked in RAM), so while it answers\nnothing is read\n\nSummarize the text above in three sentences."
+        }
+      ],
+      "max_tokens": 32,
+      "temperature": 0,
+      "seed": 1,
+      "stream": false,
+      "cache_prompt": false,
+      "ignore_eos": true,
+      "return_tokens": true,
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      }
+    },
+    "response": {
+      "choices": [
+        {
+          "finish_reason": "length",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "Strata is a high-performance inference engine that achieves significant speed improvements through fused int8 tensor-core kernels, speculative decoding, and optimized memory management strategies like KV streaming"
+          }
+        }
+      ],
+      "created": 1791551453,
+      "model": "/Users/hirakatayuuyuu/Downloads/qwen38 Flash/Niko-Strata/build-mac-phase05/models/Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+      "system_fingerprint": "b350-d81235049384534c167caea52b85a694f6103d14",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 32,
+        "prompt_tokens": 4034,
+        "total_tokens": 4066,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-r1MM7NMiQEyCRSobKWRTgY64eQj3dJhw",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 4034,
+        "prompt_ms": 3494.313,
+        "prompt_per_token_ms": 0.8662154189390183,
+        "prompt_per_second": 1154.4472404160701,
+        "predicted_n": 32,
+        "predicted_ms": 668.895,
+        "predicted_per_token_ms": 21.57725806451613,
+        "predicted_per_second": 46.345091531555774
+      }
+    },
+    "wall_seconds": 4.168668166967109,
+    "metrics_before": {
+      "llamacpp:prompt_tokens_total": 6486.0,
+      "llamacpp:prompt_tokens_cached_total": 0.0,
+      "llamacpp:prompt_seconds_total": 5.8061,
+      "llamacpp:tokens_predicted_total": 80.0,
+      "llamacpp:tokens_predicted_seconds_total": 1.56826,
+      "llamacpp:n_decode_total": 85.0,
+      "llamacpp:n_tokens_max": 4065.0,
+      "llamacpp:spec_decode_num_draft_tokens_total": 0.0,
+      "llamacpp:spec_decode_num_accepted_tokens_total": 0.0,
+      "llamacpp:spec_decode_num_drafts_total": 0.0,
+      "llamacpp:prompt_tokens_seconds": 1117.1,
+      "llamacpp:predicted_tokens_seconds": 49.099,
+      "llamacpp:requests_processing": 0.0,
+      "llamacpp:requests_deferred": 0.0,
+      "llamacpp:n_busy_slots_per_decode": 1.0
+    },
+    "metrics_after": {
+      "llamacpp:prompt_tokens_total": 10520.0,
+      "llamacpp:prompt_tokens_cached_total": 0.0,
+      "llamacpp:prompt_seconds_total": 9.29966,
+      "llamacpp:tokens_predicted_total": 112.0,
+      "llamacpp:tokens_predicted_seconds_total": 2.23715,
+      "llamacpp:n_decode_total": 119.0,
+      "llamacpp:n_tokens_max": 4065.0,
+      "llamacpp:spec_decode_num_draft_tokens_total": 0.0,
+      "llamacpp:spec_decode_num_accepted_tokens_total": 0.0,
+      "llamacpp:spec_decode_num_drafts_total": 0.0,
+      "llamacpp:prompt_tokens_seconds": 1154.7,
+      "llamacpp:predicted_tokens_seconds": 46.3451,
+      "llamacpp:requests_processing": 0.0,
+      "llamacpp:requests_deferred": 0.0,
+      "llamacpp:n_busy_slots_per_decode": 1.0
+    }
+  },
+  "profiled_log": "0.14.438.610 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 1.000 (> 0.100 thold), f_keep = 0.992\n0.14.438.659 I slot launch_slot_: id  0 | task 89 | processing task, is_child = 0\n0.18.601.877 I slot print_timing: id  0 | task 89 | prompt eval time =    3494.31 ms /  4034 tokens (    0.87 ms per token,  1154.45 tokens per second)\n0.18.601.880 I slot print_timing: id  0 | task 89 |        eval time =     668.89 ms /    32 tokens (   21.58 ms per token,    46.35 tokens per second)\n0.18.601.881 I slot print_timing: id  0 | task 89 |       total time =    4163.21 ms /  4066 tokens\n0.18.601.881 I slot print_timing: id  0 | task 89 |    graphs reused =        104\n0.18.601.972 I slot      release: id  0 | task 89 | stop processing: n_tokens = 4065, truncated = 0\n",
+  "trace_exit_code": 0,
+  "after": {
+    "response": {
+      "choices": [
+        {
+          "finish_reason": "length",
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "Strata is a high-performance inference engine that achieves significant speed improvements through fused int8 tensor-core kernels, speculative decoding, and optimized memory management strategies like KV streaming"
+          }
+        }
+      ],
+      "created": 1791551617,
+      "model": "/Users/hirakatayuuyuu/Downloads/qwen38 Flash/Niko-Strata/build-mac-phase05/models/Qwen3.8-Flash-Next-GSQ-RCO-IQ2_XS-00001-of-00002.gguf",
+      "system_fingerprint": "b350-d81235049384534c167caea52b85a694f6103d14",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 32,
+        "prompt_tokens": 4034,
+        "total_tokens": 4066,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "id": "chatcmpl-IQqHH5ebYM03RiSRf21ErJPurTudsdT1",
+      "timings": {
+        "cache_n": 0,
+        "prompt_n": 4034,
+        "prompt_ms": 4272.134,
+        "prompt_per_token_ms": 1.0590317302925136,
+        "prompt_per_second": 944.2587709093394,
+        "predicted_n": 32,
+        "predicted_ms": 644.375,
+        "predicted_per_token_ms": 20.786290322580644,
+        "predicted_per_second": 48.10863239573229
+      }
+    },
+    "wall_seconds": 5.042382707993966
+  },
+  "gpu_errors": [],
+  "response_text_equal_before_profiled_after": true,
+  "server_exit_after_shutdown": 0
+}
